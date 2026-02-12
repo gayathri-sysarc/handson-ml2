@@ -159,6 +159,8 @@ class LocalUsageMetrics:
     
     def format_size(self, size_bytes):
         """Format bytes to human-readable size."""
+        if size_bytes == 0:
+            return "0 B"
         for unit in ['B', 'KB', 'MB', 'GB']:
             if size_bytes < 1024.0:
                 return f"{size_bytes:.2f} {unit}"

@@ -80,7 +80,6 @@ GITHUB_TOKEN=your_token_here python usage_metrics.py
 **Example Output:**
 
 *Note: The numbers shown below are example values for illustration purposes.*
-
 ```
 ======================================================================
 REPOSITORY USAGE METRICS
