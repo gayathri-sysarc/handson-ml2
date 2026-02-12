@@ -78,9 +78,10 @@ GITHUB_TOKEN=your_token_here python usage_metrics.py
 ```
 
 **Example Output:**
-```
-Note: The numbers shown below are example values for illustration purposes.
 
+*Note: The numbers shown below are example values for illustration purposes.*
+
+```
 ======================================================================
 REPOSITORY USAGE METRICS
 ======================================================================
@@ -90,11 +91,11 @@ Description: Hands-on Machine Learning with Scikit-Learn, Keras and TensorFlow
 
 REPOSITORY STATISTICS
 ----------------------------------------------------------------------
-⭐ Stars:          45,000 (example)
-🍴 Forks:          20,000 (example)
-👁️  Watchers:       2,500 (example)
+⭐ Stars:          45,000
+🍴 Forks:          20,000
+👁️  Watchers:       2,500
 📂 Size:           36,000 KB
-❗ Open Issues:    50 (example)
+❗ Open Issues:    50
 ...
 ```
 

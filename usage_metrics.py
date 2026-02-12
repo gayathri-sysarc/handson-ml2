@@ -49,7 +49,7 @@ class UsageMetrics:
             if response.status_code == 403:
                 if 'X-RateLimit-Remaining' in response.headers:
                     if response.headers['X-RateLimit-Remaining'] == '0':
-                        reset_time = datetime.fromtimestamp(int(response.headers['X-RateLimit-Reset']), tz=timezone.utc)
+                        reset_time = datetime.fromtimestamp(int(response.headers['X-RateLimit-Reset']), timezone.utc)
                         print(f"⚠️  GitHub API rate limit exceeded. Resets at {reset_time.strftime('%Y-%m-%d %H:%M:%S')} UTC")
                         return None
             
