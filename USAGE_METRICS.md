@@ -94,6 +94,8 @@ REPOSITORY STATISTICS
 📂 Size:           36,000 KB
 ❗ Open Issues:    50
 ...
+
+Note: The numbers shown above are example values for illustration purposes.
 ```
 
 **Features:**

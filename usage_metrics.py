@@ -57,7 +57,7 @@ class UsageMetrics:
             return response.json()
         except requests.exceptions.RequestException as e:
             print(f"Error fetching repository info: {e}")
-            if hasattr(e.response, 'text'):
+            if hasattr(e, 'response') and e.response is not None:
                 print(f"Response: {e.response.text}")
             return None
     
