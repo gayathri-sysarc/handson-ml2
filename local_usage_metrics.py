@@ -21,6 +21,16 @@ from collections import Counter, defaultdict
 
 
 class LocalUsageMetrics:
+    """
+    Local Git Repository Usage Metrics Analyzer.
+    
+    This class analyzes a local git repository and provides comprehensive metrics
+    including commit history, contributors, file statistics, and Jupyter notebook
+    analysis. Works completely offline using only standard library modules.
+    
+    Attributes:
+        repo_path (str): Path to the git repository being analyzed
+    """
     def __init__(self, repo_path=None):
         """
         Initialize the local usage metrics analyzer.
@@ -160,7 +170,22 @@ class LocalUsageMetrics:
         return f"{num:,}"
     
     def display_metrics(self):
-        """Display all available usage metrics."""
+        """
+        Display all available local repository metrics to stdout.
+        
+        Prints a formatted report including:
+        - Repository information (path, branch, remote URL)
+        - Commit statistics and top contributors
+        - Recent commit history
+        - File statistics (total count and size)
+        - Jupyter notebook analysis (count, sizes, largest notebooks)
+        - File type distribution
+        
+        Side effects:
+            - Prints formatted output to stdout
+            - Executes git commands via subprocess
+            - Walks the file system to analyze files
+        """
         print("=" * 70)
         print("LOCAL REPOSITORY USAGE METRICS")
         print("=" * 70)

@@ -107,9 +107,11 @@ REPOSITORY STATISTICS
 
 ## Requirements
 
+Both scripts require **Python 3.7+** (for f-strings and other modern features).
+
 The `local_usage_metrics.py` script uses only Python standard library modules (no additional dependencies required).
 
-The `usage_metrics.py` script requires Python 3.6+ and the `requests` library.
+The `usage_metrics.py` script requires the `requests` library.
 
 Install the requests library:
 ```bash

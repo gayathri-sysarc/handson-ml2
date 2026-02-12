@@ -21,6 +21,21 @@ import sys
 
 
 class UsageMetrics:
+    """
+    GitHub Repository Usage Metrics Fetcher.
+    
+    This class fetches and displays usage metrics for a GitHub repository using
+    the GitHub REST API. It can retrieve public repository statistics (stars,
+    forks, watchers) without authentication, and traffic data (views, clones)
+    with proper authentication.
+    
+    Attributes:
+        owner (str): Repository owner (username or organization)
+        repo (str): Repository name
+        api_base (str): GitHub API base URL
+        token (str): GitHub personal access token from GITHUB_TOKEN env var
+        headers (dict): HTTP headers for API requests including authentication
+    """
     def __init__(self, owner="ageron", repo="handson-ml2"):
         """
         Initialize the usage metrics fetcher.
@@ -110,7 +125,21 @@ class UsageMetrics:
         return f"{num:,}"
     
     def display_metrics(self):
-        """Display all available usage metrics."""
+        """
+        Display all available usage metrics to stdout.
+        
+        Prints a formatted report including:
+        - Repository information and description
+        - Statistics (stars, forks, watchers, size, issues)
+        - Last update timestamp
+        - Language and license information
+        - Traffic data (if authenticated with proper permissions)
+        - Popular paths and referrers (if authenticated with proper permissions)
+        
+        Side effects:
+            - Prints formatted output to stdout
+            - Makes multiple HTTP requests to GitHub API
+        """
         print("=" * 70)
         print("REPOSITORY USAGE METRICS")
         print("=" * 70)
