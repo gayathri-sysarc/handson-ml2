@@ -36,7 +36,7 @@ class UsageMetrics:
         self.headers = {}
         
         if self.token:
-            self.headers["Authorization"] = f"token {self.token}"
+            self.headers["Authorization"] = f"Bearer {self.token}"
     
     def get_repository_info(self):
         """Fetch basic repository information and statistics."""
