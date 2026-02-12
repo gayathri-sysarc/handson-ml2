@@ -15,6 +15,7 @@ Usage:
 import os
 import subprocess
 import json
+import sys
 from datetime import datetime
 from pathlib import Path
 from collections import Counter, defaultdict
@@ -249,8 +250,6 @@ class LocalUsageMetrics:
 
 def main():
     """Main function to run the local usage metrics script."""
-    import sys
-    
     repo_path = sys.argv[1] if len(sys.argv) > 1 else None
     
     metrics = LocalUsageMetrics(repo_path)

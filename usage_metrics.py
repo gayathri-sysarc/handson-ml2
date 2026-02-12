@@ -16,7 +16,6 @@ Set GITHUB_TOKEN environment variable for full functionality.
 
 import requests
 import os
-import json
 from datetime import datetime
 import sys
 
