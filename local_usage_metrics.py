@@ -104,8 +104,8 @@ class LocalUsageMetrics:
         # Walk through repository
         for root, dirs, files in os.walk(self.repo_path):
             # Skip .git directory
-            if '.git' in root:
-                continue
+            if '.git' in dirs:
+                dirs.remove('.git')
             
             for file in files:
                 file_path = os.path.join(root, file)
