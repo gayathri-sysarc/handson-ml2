@@ -16,7 +16,7 @@ Set GITHUB_TOKEN environment variable for full functionality.
 
 import requests
 import os
-from datetime import datetime
+from datetime import datetime, timezone
 import sys
 
 
@@ -49,8 +49,8 @@ class UsageMetrics:
             if response.status_code == 403:
                 if 'X-RateLimit-Remaining' in response.headers:
                     if response.headers['X-RateLimit-Remaining'] == '0':
-                        reset_time = datetime.utcfromtimestamp(int(response.headers['X-RateLimit-Reset']))
-                        print(f"⚠️  GitHub API rate limit exceeded. Resets at {reset_time} UTC")
+                        reset_time = datetime.fromtimestamp(int(response.headers['X-RateLimit-Reset']), tz=timezone.utc)
+                        print(f"⚠️  GitHub API rate limit exceeded. Resets at {reset_time.strftime('%Y-%m-%d %H:%M:%S')} UTC")
                         return None
             
             response.raise_for_status()
@@ -139,7 +139,7 @@ class UsageMetrics:
         print(f"🔀 Default Branch: {repo_info['default_branch']}")
         
         # Display last update
-        updated_at = datetime.strptime(repo_info['updated_at'], "%Y-%m-%dT%H:%M:%SZ")
+        updated_at = datetime.strptime(repo_info['updated_at'], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
         print(f"🕒 Last Updated:   {updated_at.strftime('%Y-%m-%d %H:%M:%S')} UTC")
         
         # Display language
