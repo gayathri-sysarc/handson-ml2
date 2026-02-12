@@ -10,6 +10,15 @@ python. It contains the example code and solutions to the exercises in the secon
 
 **Note**: If you are looking for the first edition notebooks, check out [ageron/handson-ml](https://github.com/ageron/handson-ml). For the third edition, check out [ageron/handson-ml3](https://github.com/ageron/handson-ml3).
 
+## Usage Metrics
+
+Want to see usage metrics and statistics for this repository? Check out the [Usage Metrics Guide](USAGE_METRICS.md).
+
+You can view local repository metrics by running:
+```bash
+python local_usage_metrics.py
+```
+
 ## Quick Start
 
 ### Want to play with these notebooks online without having to install anything?
